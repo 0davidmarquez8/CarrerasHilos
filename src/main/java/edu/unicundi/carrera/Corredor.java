@@ -35,6 +35,11 @@ public class Corredor extends Thread {
     }
 
     public void correr() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Corredor.class.getName()).log(Level.SEVERE, null, ex);
+        }
         String contadorRecorre = "";
         String contadorFaltaRecorrer = "";
         boolean bandera = false;
@@ -55,6 +60,8 @@ public class Corredor extends Thread {
         if (this.recorrido <= this.distancia) {
             //System.out.println(this.recorrido);
             correr();
+        }else{
+            System.out.println("acabo");
         }
     }
 }

@@ -13,10 +13,10 @@ public class Main {
 
      public static void main(String[] args) {
         Corredor corredor = new Corredor("\u001B[31m","C", "Camilo");  
-        corredor.start();
         Corredor corredor2 = new Corredor("\u001B[34m","A", "Andres"); 
-        corredor2.start();
         Corredor corredor3 = new Corredor("\u001B[33m","J", "Juan");
+        corredor.start();
+        corredor2.start();
         corredor3.start();
         
     }
