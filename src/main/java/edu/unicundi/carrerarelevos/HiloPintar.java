@@ -28,28 +28,27 @@ public class HiloPintar extends Thread {
         Corredor corredor = new Corredor("A", 1, equipo1);
         Corredor corredor1 = new Corredor("B", 2, equipo1);
         Corredor corredor2 = new Corredor("C", 3, equipo1);
-        Corredor corredor3 = new Corredor("D", 1, equipo2);
-        Corredor corredor4 = new Corredor("E", 2, equipo2);
-        Corredor corredor5 = new Corredor("F", 3, equipo2);
-        Corredor corredor6 = new Corredor("G", 1, equipo3);
-        Corredor corredor7 = new Corredor("H", 2, equipo3);
-        Corredor corredor8 = new Corredor("J", 3, equipo3);
+//        Corredor corredor3 = new Corredor("D", 1, equipo2);
+//        Corredor corredor4 = new Corredor("E", 2, equipo2);
+//        Corredor corredor5 = new Corredor("F", 3, equipo2);
+//        Corredor corredor6 = new Corredor("G", 1, equipo3);
+//        Corredor corredor7 = new Corredor("H", 2, equipo3);
+//        Corredor corredor8 = new Corredor("J", 3, equipo3);
         corredor.start();
         corredor1.start();
         corredor2.start();
-        corredor3.start();
-        corredor4.start();
-        corredor5.start();
-        corredor6.start();
-        corredor7.start();
-        corredor8.start();
+//        corredor3.start();
+//        corredor4.start();
+//        corredor5.start();
+//        corredor6.start();
+//        corredor7.start();
+//        corredor8.start();
 
     }
 
     public void pinta2() {
         equipo1.pintar();
-        equipo2.pintar();
-        equipo3.pintar();
+//       -
     }
 
     @Override
