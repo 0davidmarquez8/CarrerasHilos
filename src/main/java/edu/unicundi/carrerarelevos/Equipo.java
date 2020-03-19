@@ -15,7 +15,9 @@ public class Equipo {
     private String color;
     private String distancia[]= new String[90];
     private boolean estado;
+    private int data;
     public static final String ANSI_RESET = "\u001B[0m";
+    private int recorrido;
 
     public Equipo(String nombre, String color) {
         this.nombre = nombre;
@@ -27,7 +29,7 @@ public class Equipo {
     }
     public void pintar(){
         for (int i = 0; i < this.distancia.length; i++) {
-            System.out.print("\u001B[32m"+this.distancia[i]+ANSI_RESET);
+            System.out.print(this.color+this.distancia[i]+ANSI_RESET);
         }
         System.out.println("");
     }
@@ -47,5 +49,30 @@ public class Equipo {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    public int getData() {
+        return data;
+    }
+
+    public void setData(int data) {
+        this.data = data;
+    }
+
+    public int getRecorrido() {
+        return recorrido;
+    }
+
+    public void setRecorrido(int recorrido) {
+        this.recorrido = recorrido;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
 
 }
