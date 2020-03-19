@@ -9,17 +9,25 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Clase HiloPintar que hereda de Thread para la revision de los corredores.
  *
- * @author PROFESIONAL
+ * @author Juan camilo vargas
  */
 public class HiloPintar extends Thread {
 
+    /*variable que almacena la instancia del equipo1*/
     private Equipo equipo1;
+    /*variable que almacena la instancia del equipo2*/
     private Equipo equipo2;
+    /*variable que almacena la instancia del equipo3*/
     private Equipo equipo3;
-
+    /*variable que almacena el estado del programa para finalizarlo*/
     private boolean bandera;
 
+    /**
+     * Metodo que inicia parametros de equipo y corredores
+     *
+     */
     public void llenarEquipo() {
         this.equipo1 = new Equipo("lcas", "\u001B[35m");
         this.equipo2 = new Equipo("Hola", "\u001B[31m");
@@ -46,11 +54,18 @@ public class HiloPintar extends Thread {
 
     }
 
+    /**
+     * Metodo que campura el pintado de la carrera
+     *
+     */
     public void pinta2() {
         equipo1.pintar();
-//       -
     }
 
+    /**
+     * Metodo que inicia el hilo llama al metodo
+     *
+     */
     @Override
     public void run() {
         while (!bandera) {
@@ -66,12 +81,20 @@ public class HiloPintar extends Thread {
         }
     }
 
+    /**
+     * Metodo retorna el estado del hilo
+     *
+     */
     public boolean isBandera() {
         return bandera;
     }
 
+     /**
+     * Metodo recibe el estado del hilo
+     *
+     */
     public void setBandera(boolean bandera) {
         this.bandera = bandera;
     }
-    
+
 }
