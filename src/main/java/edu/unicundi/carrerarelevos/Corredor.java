@@ -200,9 +200,9 @@ public class Corredor extends Thread {
             } else {
                 this.equipo.getDistancia()[89] = this.figura;
                 this.equipo.getDistancia()[this.auxiliar] = "-";
-                equipo.setEstado(true);
                 HiloPintar hiloPintar = new HiloPintar();
-                hiloPintar.setGanador("jaj");
+                hiloPintar.setGanador(equipo.getNombre());
+                equipo.setEstado(true);
             }
 
         } else {
