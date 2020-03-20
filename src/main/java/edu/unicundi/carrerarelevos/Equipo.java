@@ -20,17 +20,10 @@ public class Equipo {
      * Variable para guardar el color del equipo
      */
     private String color;
-    /**
-     * Variable para almacenar los recorridos de los corredores
-     */
-    private String distancia[] = new String[90];
-    /**
-     * Variable para guardar el estado del equipo
-     */
-    private boolean estado;
-    /**
-     * Variable para resetear el color
-     */
+    private String distancia[]= new String[90];
+    private static boolean estado;
+    
+    private int data;
     public static final String ANSI_RESET = "\u001B[0m";
 
     /**

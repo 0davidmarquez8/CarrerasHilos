@@ -21,11 +21,9 @@ public class HiloPintar extends Thread {
     private Equipo equipo2;
     /*variable que almacena la instancia del equipo3*/
     private Equipo equipo3;
-
-    /*variable que almacena el nombre del ganadro*/
+    /*variable que almacena el ganador del equipo*/
     private static String ganador;
-
-    /*variable que almacena el estado del programa para finalizarlo*/
+    /*variable que almacena el estado del hilo*/
     private boolean bandera;
 
     /**
@@ -104,11 +102,12 @@ public class HiloPintar extends Thread {
         this.bandera = bandera;
     }
 
-    public static String getGanador() {
+    public String getGanador() {
         return ganador;
     }
 
     public static void setGanador(String ganador) {
         HiloPintar.ganador = ganador;
     }
+
 }
