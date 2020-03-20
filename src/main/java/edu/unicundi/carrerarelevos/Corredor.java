@@ -49,7 +49,7 @@ public class Corredor extends Thread {
         this.posicion = posicion;
         this.equipo = equipo;
         this.recorrido2 = 30 + (int) Math.floor(Math.random() * 4 + 1);
-        this.recorrido3 = 60 + (int) Math.floor(Math.random() * 4 + 1);
+        this.recorrido3 = 60;
         this.bandera = false;
         this.bandera2 = false;
 
@@ -106,24 +106,17 @@ public class Corredor extends Thread {
             }
         } else {
             if (bandera2 == false) {
-                if (!bandera) {
-                    synchronized (equipo) {
-                        try {
-                            equipo.wait();
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(Corredor.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+
+                synchronized (equipo) {
+                    try {
+                        equipo.wait();
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Corredor.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                } else {
-                    synchronized (equipo) {
-                        try {
-                            equipo.wait();
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(Corredor.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    avanzarPosicionTres();
                 }
+
+                avanzarPosicionTres();
+
             } else {
                 avanzarPosicionTres();
             }
@@ -139,7 +132,6 @@ public class Corredor extends Thread {
         this.equipo.getDistancia()[this.auxiliar] = "-";
         this.equipo.getDistancia()[this.recorrido] = this.figura;
         if (this.recorrido != 30) {
-
             if (this.recorrido < 30) {
                 this.auxiliar = this.recorrido;
                 this.recorrido += (int) Math.floor(Math.random() * 4 + 1);
@@ -192,26 +184,30 @@ public class Corredor extends Thread {
      *
      */
     public void avanzarPosicionTres() {
+        if (bandera2) {
+            if (this.recorrido3 != 89) {
+                this.equipo.getDistancia()[this.auxiliar] = "-";
+                this.equipo.getDistancia()[this.recorrido3] = this.figura;
+                if (this.recorrido3 < 89) {
+                    this.auxiliar = this.recorrido3;
+                    this.recorrido3 += (int) Math.floor(Math.random() * 4 + 1);
+                    if (this.recorrido3 > 89) {
+                        this.recorrido3 = 89;
 
-        if (this.recorrido3 != 89) {
-            this.equipo.getDistancia()[this.auxiliar] = "-";
-            this.equipo.getDistancia()[this.recorrido3] = this.figura;
-            if (this.recorrido3 < 89) {
-                this.auxiliar = this.recorrido3;
-                this.recorrido3 += (int) Math.floor(Math.random() * 4 + 1);
-                if (this.recorrido3 > 89) {
-                    this.recorrido3 = 89;
-
+                    }
                 }
+                correr();
+            } else {
+                this.equipo.getDistancia()[89] = this.figura;
+                this.equipo.getDistancia()[this.auxiliar] = "-";
+                equipo.setEstado(true);
+                HiloPintar hiloPintar = new HiloPintar();
+                hiloPintar.setGanador("jaj");
             }
-            correr();
+
         } else {
-            this.equipo.getDistancia()[89] = this.figura;
-            equipo.setEstado(true);
-            HiloPintar hiloPintar = new HiloPintar();
-            hiloPintar.setBandera(true);
-            System.out.println("Ganador: " + equipo.getNombre());
-//            System.exit(0);
+            this.recorrido3 = 60 + (int) Math.floor(Math.random() * 4 + 1);
+            correr();
         }
     }
 
