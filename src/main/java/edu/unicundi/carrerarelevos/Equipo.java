@@ -51,43 +51,54 @@ public class Equipo {
         System.out.println("");
     }
 
+   
     /**
      * metodo que retorna la distancia
+     * @return String[]
      */
     public String[] getDistancia() {
         return distancia;
     }
 
+
     /**
      * metodo que recibe la distancia
+     * @param distancia guarda la distacia de los corredores
      */
     public void setDistancia(String[] distancia) {
         this.distancia = distancia;
     }
 
+  
     /**
-     * metodo que retorna el
+     * metodo que retorna el estado
+     * @return boolean
      */
     public boolean isEstado() {
         return estado;
     }
 
+   
     /**
      * metodo que recibe el estado
+     * @param estado el estado del hilo
      */
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
 
     /**
-     * metodo que retorna el nombre del equipo
+     *  metodo que retorna el nombre del equipo
+     * @return String
      */
     public String getNombre() {
         return nombre;
     }
 
+ 
     /**
      * metodo que recibe el nombre del equipo
+     * @param nombre nombre del equipo
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;

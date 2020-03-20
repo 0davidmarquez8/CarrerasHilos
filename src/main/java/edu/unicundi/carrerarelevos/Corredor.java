@@ -39,10 +39,7 @@ public class Corredor extends Thread {
      *
      * @param figura Almacena la figutra de cada corredor
      * @param posicion pocicion en la que se encuentra cada jugador
-     * @param equipo instancia del equipo al que pertenece cada corredor
-     * @param recorrido2 recorrido que realiza el corredor 2
-     * @param recorrido3 recorrido que realiza el corredor 3
-     * @param bandera verifica el estado de cada hilo para su arranque
+     * @param equipo instancia del equipo al que pertenece cada corredor    
      */
     public Corredor(String figura, int posicion, Equipo equipo) {
         this.figura = figura;

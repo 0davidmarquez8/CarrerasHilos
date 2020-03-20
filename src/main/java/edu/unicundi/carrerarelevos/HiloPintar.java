@@ -70,6 +70,7 @@ public class HiloPintar extends Thread {
      * Metodo que inicia el hilo llama al metodo
      *
      */
+    
     @Override
     public void run() {
         while (!bandera) {
@@ -88,15 +89,16 @@ public class HiloPintar extends Thread {
 
     /**
      * Metodo retorna el estado del hilo
-     *
+     * @return boolean
      */
     public boolean isBandera() {
         return bandera;
     }
 
+    
     /**
      * Metodo recibe el estado del hilo
-     *
+     * @param bandera  rompe el ciclo del pintado
      */
     public void setBandera(boolean bandera) {
         this.bandera = bandera;
