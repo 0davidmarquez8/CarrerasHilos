@@ -14,7 +14,8 @@ public class Equipo {
     private String nombre;
     private String color;
     private String distancia[]= new String[90];
-    private boolean estado;
+    private static boolean estado;
+    
     private int data;
     public static final String ANSI_RESET = "\u001B[0m";
     private int recorrido;
