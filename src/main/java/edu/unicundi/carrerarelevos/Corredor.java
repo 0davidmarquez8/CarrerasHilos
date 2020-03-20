@@ -9,22 +9,41 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Clase las acciones del corredor.
  *
- * @author PROFESIONAL
+ * @author David Márquez, juan camilo vargas
  */
 public class Corredor extends Thread {
 
+    /* variable almacena la figutra de cada corredor*/
     private String figura;
+    /* variable almacena la figutra de cada corredor*/
     private int posicion;
+    /* variable almacena la pocicion en la que se encuentra cada jugador*/
     private Equipo equipo;
+    /* variable almacena la pocision anterior de corredor*/
     private int auxiliar;
+    /* variable almacena la figutra de cada corredor*/
     private int recorrido;
+    /* variable almacena recorrido que realiza el corredor2*/
     private int recorrido2;
+    /* variable almacena recorrido que realiza el corredor 3*/
     private int recorrido3;
-
+    /* variable estatica  almacena verifica el estado de cada hilo para su arranque */
     private static boolean bandera;
+    /* variable estatica  almacena verifica el estado de cada hilo para su arranque */
     private static boolean bandera2;
 
+    /**
+     * Constructor principal de la clase
+     *
+     * @param figura Almacena la figutra de cada corredor
+     * @param posicion pocicion en la que se encuentra cada jugador
+     * @param equipo instancia del equipo al que pertenece cada corredor
+     * @param recorrido2 recorrido que realiza el corredor 2
+     * @param recorrido3 recorrido que realiza el corredor 3
+     * @param bandera verifica el estado de cada hilo para su arranque
+     */
     public Corredor(String figura, int posicion, Equipo equipo) {
         this.figura = figura;
         this.posicion = posicion;
@@ -47,13 +66,21 @@ public class Corredor extends Thread {
 
     }
 
+    /**
+     * Metodo que inicia el hilo llama al metodo
+     *
+     */
     @Override
-
     public void run() {
         correr();
 
     }
 
+    /**
+     * Metodo que inicia el recorrido de cada uno de los jugadores por sus
+     * posiciones
+     *
+     */
     public void correr() {
         try {
             Thread.sleep(1000);
@@ -98,6 +125,10 @@ public class Corredor extends Thread {
 
     }
 
+    /**
+     * Metodo que inicia el recorrido del corredor 1 aleatoriamente
+     *
+     */
     public void avanzarPosicionUno() {
         this.equipo.getDistancia()[this.auxiliar] = "-";
         this.equipo.getDistancia()[this.recorrido] = this.figura;
@@ -120,6 +151,10 @@ public class Corredor extends Thread {
         }
     }
 
+    /**
+     * Metodo que inicia el recorrido del corredor 2 aleatoriamente
+     *
+     */
     public void avanzarPosicionDos() {
 
         if (this.recorrido2 != 60) {
@@ -145,6 +180,10 @@ public class Corredor extends Thread {
 
     }
 
+    /**
+     * Metodo que inicia el recorrido del corredor 3 aleatoriamente
+     *
+     */
     public void avanzarPosicionTres() {
         if (bandera2) {
             if (this.recorrido3 != 89) {

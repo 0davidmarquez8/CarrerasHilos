@@ -7,7 +7,8 @@ package edu.unicundi.carrerarelevos;
 
 /**
  *
- * @author PROFESIONAL
+ * @author Juan Camilo 
+ * Metodo principal
  */
 public class Main {
     
