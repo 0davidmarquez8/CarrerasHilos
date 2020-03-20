@@ -21,6 +21,8 @@ public class HiloPintar extends Thread {
     private Equipo equipo2;
     /*variable que almacena la instancia del equipo3*/
     private Equipo equipo3;
+
+    /*variable que almacena el nombre del ganadro*/
     private static String ganador;
 
     /*variable que almacena el estado del programa para finalizarlo*/
@@ -62,6 +64,8 @@ public class HiloPintar extends Thread {
      */
     public void pinta2() {
         equipo1.pintar();
+        equipo2.pintar();
+        equipo3.pintar();
     }
 
     /**
@@ -81,7 +85,7 @@ public class HiloPintar extends Thread {
                 Logger.getLogger(HiloPintar.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        System.out.println("Equipo ganador: " +this.getGanador());
+        System.out.println("Equipo ganador: " + this.getGanador());
     }
 
     /**
@@ -92,7 +96,7 @@ public class HiloPintar extends Thread {
         return bandera;
     }
 
-     /**
+    /**
      * Metodo recibe el estado del hilo
      *
      */
@@ -100,4 +104,11 @@ public class HiloPintar extends Thread {
         this.bandera = bandera;
     }
 
+    public static String getGanador() {
+        return ganador;
+    }
+
+    public static void setGanador(String ganador) {
+        HiloPintar.ganador = ganador;
+    }
 }

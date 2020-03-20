@@ -48,6 +48,7 @@ public class Corredor extends Thread {
         this.figura = figura;
         this.posicion = posicion;
         this.equipo = equipo;
+        this.recorrido = (int) Math.floor(Math.random() * 4 + 1);
         this.recorrido2 = 30 + (int) Math.floor(Math.random() * 4 + 1);
         this.recorrido3 = 60;
         this.bandera = false;
