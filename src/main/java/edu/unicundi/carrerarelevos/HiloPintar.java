@@ -21,8 +21,9 @@ public class HiloPintar extends Thread {
     private Equipo equipo2;
     /*variable que almacena la instancia del equipo3*/
     private Equipo equipo3;
+    /*variable que almacena el ganador del equipo*/
     private static String ganador;
-
+    /*variable que almacena el estado del hilo*/
     private boolean bandera;
 
     /**

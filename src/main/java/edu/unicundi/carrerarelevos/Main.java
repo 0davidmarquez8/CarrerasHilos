@@ -16,13 +16,7 @@ public class Main {
         boolean bandera = false;
         HiloPintar hiloPintar = new HiloPintar();
         hiloPintar.llenarEquipo();
-        hiloPintar.start();
-        while (bandera) {
-            if (hiloPintar.isBandera()) {
-                hiloPintar.interrupt();
-                bandera = true;
-            }
-        }
+        hiloPintar.start();        
 
     }
 }
